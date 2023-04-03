@@ -19,7 +19,7 @@ public class tunning : MonoBehaviour
     private void Update()
     {
         // la commande lerp perme de choisir une valeur en 0 & 1 et me permet de faire des jeux de lumiere 
-        lerpedColor = Color.Lerp(Color.blue, Color.red, Mathf.PingPong(Time.time, 2));
+        lerpedColor = Color.Lerp(Color.yellow, Color.green, Mathf.PingPong(Time.time, 2));
         light.color = lerpedColor;
     }
 }
