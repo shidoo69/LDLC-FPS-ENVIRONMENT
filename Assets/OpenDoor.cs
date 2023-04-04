@@ -1,22 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField]
-    GameObject doorObject;
-
-
+    public GameObject door;
     private void OnTriggerStay(Collider other)
-
     {
-        Debug.Log("Il y a collision avec " + other.gameObject.name);
-        doorObject.SetActive(false);
+        door.SetActive(false);
     }
+
     private void OnTriggerExit(Collider other)
     {
-        doorObject.SetActive(true);
+        door.SetActive(true);
     }
 }
-    
