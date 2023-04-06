@@ -32,6 +32,7 @@ public class Interaction : MonoBehaviour
             }
             else
             {
+
                 if(GameManager.Instance.barscore < 5)
                     {
                     if (GameManager.Instance.barscore == 4)
