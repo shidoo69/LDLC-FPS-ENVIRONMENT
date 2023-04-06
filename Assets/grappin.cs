@@ -42,7 +42,7 @@ public class grappin : MonoBehaviour
                 destination = hit.point;
                 timer = 0;
                 position2depart = transform.position;
-                ShootLaserFromTargetPosition(Camera.main.transform.position+Camera.main.transform.right*-0.5f, (destination-position2depart).normalized, maxDistance);
+                ShootLaserFromTargetPosition(Camera.main.transform.position+Camera.main.transform.right*-0.5f, (destination-Camera.main.transform.position).normalized, maxDistance);
                 laserLineRenderer.enabled = true;
                 float distance = Vector3.Distance(destination, position2depart);
                 temps = distance/vitesse;
