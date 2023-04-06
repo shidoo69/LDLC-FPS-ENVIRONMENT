@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class grab : MonoBehaviour
 
 {
-    Rigidbody rigidbody;
+    Rigidbody _rigidbody;
     public Camera camera;
 
     void Start()
@@ -26,14 +26,14 @@ public class grab : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 //On prend le rigidbody de l'élément toucher par le rayon
-                rigidbody = hit.transform.GetComponent<Rigidbody>();
+                _rigidbody = hit.transform.GetComponent<Rigidbody>();
                 
-                if (rigidbody == null)
+                if (_rigidbody == null)
                     return;
 
                 //Désactive la gravitée
-                rigidbody.useGravity = false;
-                rigidbody.isKinematic = true;
+                _rigidbody.useGravity = false;
+                _rigidbody.isKinematic = true;
                 // Rapporcher le sac
                 hit.transform.position = transform.position + (transform.forward * 2);
                 hit.transform.parent = transform;
@@ -41,13 +41,13 @@ public class grab : MonoBehaviour
 
             }
         }
-        if (Mouse.current.rightButton.wasReleasedThisFrame)
+        if (_rigidbody != null && Mouse.current.rightButton.wasReleasedThisFrame)
         {
             //Désactive la gravitée
-            rigidbody.useGravity = true;
-            rigidbody.isKinematic = false;
+            _rigidbody.useGravity = true;
+            _rigidbody.isKinematic = false;
             // Rapporcher le sac
-            rigidbody.transform.parent = null;
+            _rigidbody.transform.parent = null;
 
 
 
