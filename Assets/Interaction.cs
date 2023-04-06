@@ -11,9 +11,10 @@ public class Interaction : MonoBehaviour
     public GameObject panel;
     public TMP_Text Nom;
     public TMP_Text Phrase;
+    int premierdialogue;
     void Start()
     {
-        
+        premierdialogue = 0;    
     }
 
     // Update is called once per frame
@@ -21,27 +22,52 @@ public class Interaction : MonoBehaviour
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            if(GameManager.Instance.barscore < 5)
-                {
-                    panel.SetActive(true);
-                    Nom.text = "Fred";
-                    Phrase.text = "Tu n'as pas assez de barils pour me parler.";
-                    StartCoroutine(PlusdeTexte());
-                    
+            if (premierdialogue == 0)
+            {
+                panel.SetActive(true);
+                Nom.text = "Fred";
+                Phrase.text = "Bonjour, je m'appel Fred. Dieu m'a dit que tu voulais partir de la ville. Tout d'abord apporte moi les 5 barils caché dans la ville";
+                StartCoroutine(PlusdeTexte());
+                premierdialogue++;
             }
             else
-                {
-                    panel.SetActive(true);
-                Nom.text = "Fred";
-                Phrase.text = "Bravo";
-                    StartCoroutine(PlusdeTexte());
+            {
+                if(GameManager.Instance.barscore < 5)
+                    {
+                    if (GameManager.Instance.barscore == 4)
+                    {
+                        panel.SetActive(true);
+                        Nom.text = "Fred";
+                        Phrase.text = "Tu n'as pas encore récupéré tous les barils, viens me parler quand tu auras trouvé le dernier baril";
+                        StartCoroutine(PlusdeTexte());
+                    }
+                    else
+                    {
+                        panel.SetActive(true);
+                        Nom.text = "Fred";
+                        Phrase.text = "Tu n'as pas encore récupéré tous les barils, viens me parler quand tu auras trouvé les " + (5 - GameManager.Instance.barscore) + " barils restants";
+                        StartCoroutine(PlusdeTexte());
+                    }
+
+                    
+                }
+                else
+                    {
+                        panel.SetActive(true);
+                    Nom.text = "Fred";
+                    Phrase.text = "Merci pour les barils mais Lil Fred est parti quand j'avais le dos tourné. Rammène la moi s'il te plaît.";
+                        StartCoroutine(PlusdeTexte());
+                }
             }
         }
+        IEnumerator PlusdeTexte()
+        {
+            yield return new WaitForSeconds(5);
+            panel.SetActive(false);
+        }
     }
-    IEnumerator PlusdeTexte()
-    {
-        yield return new WaitForSeconds(3);
-        panel.SetActive(false);
-    }
-
 }
+
+
+
+
