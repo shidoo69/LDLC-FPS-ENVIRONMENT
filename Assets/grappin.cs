@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class grappin : MonoBehaviour
     public float laserWidth = 0.1f;
 
     public float maxDistance;
+    public float grappinJumpForce;
+
     void ShootLaserFromTargetPosition(Vector3 targetPosition, Vector3 direction, float length)
     {
         Ray ray = new Ray(targetPosition, direction);
@@ -61,7 +64,7 @@ public class grappin : MonoBehaviour
             {
                 destination = Vector3.zero;
                 laserLineRenderer.enabled = false;
-
+                GetComponent<FirstPersonController>()._verticalVelocity = grappinJumpForce;
             }
 
 
