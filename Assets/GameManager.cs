@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public  GameObject panel;
     public TMP_Text Nom;
     public TMP_Text Phrase;
+    public GameObject plus1;
 
 
     public int barscore;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
         Nom.text = "Dieu";
         Phrase.text = "Bonjour, c'est Dieu qui te parle. Appuie sur la touche Tab si tu as besoin d'informations. Va parler à Fred, elle va te dire comment t'échapper de la ville.";
         StartCoroutine(TexteIntro());
+        plus1.SetActive(false);
 
     }
      void Update()
