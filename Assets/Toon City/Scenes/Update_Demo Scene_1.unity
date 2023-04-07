@@ -48934,7 +48934,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "Grappin : clic gauche\nAvancer : z\nReculer : s\nAller \xE0 Gauche
-        : q\nAller \xE0 droite : d\nAttraper les enfants : clic droite"
+        : q\nAller \xE0 droite : d\nAttraper les enfants : maintenir clic droit"
       objectReference: {fileID: 0}
     - target: {fileID: 6348076664288218600, guid: 8ebabd7273a8f8046bed4659878a4260,
         type: 3}

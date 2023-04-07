@@ -26,7 +26,7 @@ public class Interaction : MonoBehaviour
             {
                 panel.SetActive(true);
                 Nom.text = "Fred";
-                Phrase.text = "Bonjour, je m'appel Fred. Dieu m'a dit que tu voulais partir de la ville. Tout d'abord apporte moi les 5 barils caché dans la ville";
+                Phrase.text = "Bonjour, je m'appelle Fred. Dieu m'a dit que tu voulais partir de la ville. Tout d'abord, apporte-moi les 5 barils caché dans la ville.";
                 StartCoroutine(PlusdeTexte());
                 premierdialogue++;
             }
@@ -39,14 +39,14 @@ public class Interaction : MonoBehaviour
                     {
                         panel.SetActive(true);
                         Nom.text = "Fred";
-                        Phrase.text = "Tu n'as pas encore récupéré tous les barils, viens me parler quand tu auras trouvé le dernier baril";
+                        Phrase.text = "Tu n'as pas encore récupéré tous les barils, viens me parler quand tu auras trouvé le dernier baril.";
                         StartCoroutine(PlusdeTexte());
                     }
                     else
                     {
                         panel.SetActive(true);
                         Nom.text = "Fred";
-                        Phrase.text = "Tu n'as pas encore récupéré tous les barils, viens me parler quand tu auras trouvé les " + (5 - GameManager.Instance.barscore) + " barils restants";
+                        Phrase.text = "Tu n'as pas encore récupéré tous les barils, viens me parler quand tu auras trouvé les " + (5 - GameManager.Instance.barscore) + " barils restants.";
                         StartCoroutine(PlusdeTexte());
                     }
 
@@ -56,7 +56,7 @@ public class Interaction : MonoBehaviour
                     {
                         panel.SetActive(true);
                     Nom.text = "Fred";
-                    Phrase.text = "Merci pour les barils mais Lil Fred est parti quand j'avais le dos tourné. Rammène la moi s'il te plaît.";
+                    Phrase.text = "Merci pour les barils, mais Lil Fred, est parti quand j'avais le dos tourné. Ramène-la-moi s'il te plaît.";
                         StartCoroutine(PlusdeTexte());
                 }
             }
