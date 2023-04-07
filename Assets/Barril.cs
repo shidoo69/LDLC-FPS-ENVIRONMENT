@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Barril : MonoBehaviour
 {
@@ -9,11 +10,11 @@ public class Barril : MonoBehaviour
     public float speed = 0.2f;
     Vector3 direction = new Vector3(0f, -1f, 0f);
     private Vector3 positionInitiale;
+    public AudioSource bruitage;
     void Start()
     {
         gameManager = GameManager.Instance;
         rigidbody = GetComponent<Rigidbody>();
-
         positionInitiale = transform.position;
     }
 
@@ -21,13 +22,15 @@ public class Barril : MonoBehaviour
     {
 
     }
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("touché");
             gameObject.SetActive(false);
             gameManager.UpdateScore(1);
+            bruitage.Play();
+            FindObjectOfType<Plus1Manager>().Show();
         }
 
     }
@@ -53,5 +56,6 @@ public class Barril : MonoBehaviour
             direction.y = -1f;
         }
     }
+
 }
 

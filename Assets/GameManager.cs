@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     {
         barscore += scoreToAdd;
         scoreText.text = "Score: " + barscore + " / 5" ;
+
+
         if (barscore == 5)
         {
             panel.SetActive(true);
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
             Nom.text = "Dieu";
             Phrase.text = "Continue comme ça, il ne t'en reste plus que 4.";
             StartCoroutine(PlusdeTexte());
+
 
         }
 
@@ -84,5 +87,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(60);
         panel.SetActive(false);
     }
+
+
 
 }
