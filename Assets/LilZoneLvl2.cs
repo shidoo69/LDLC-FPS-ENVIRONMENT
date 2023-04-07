@@ -25,6 +25,7 @@ public class LilZoneLvl2 : MonoBehaviour
             Nom.text = "Fred";
             Phrase.text = "Merci beaucoup ! Maintenant, tu peux attraper tout ce qu'il y a dans la carte.";
             StartCoroutine(PlusdeTexte());
+            FindObjectOfType<grab>().canGrabEverything = true;
             lvl2finis++;
         }
             

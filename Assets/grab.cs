@@ -8,7 +8,7 @@ public class grab : MonoBehaviour
 {
     Rigidbody _rigidbody;
     public Camera camera;
-
+    public bool canGrabEverything;
     void Start()
     {
 
@@ -29,6 +29,9 @@ public class grab : MonoBehaviour
                 _rigidbody = hit.transform.GetComponent<Rigidbody>();
                 
                 if (_rigidbody == null)
+                    return;
+
+                if(_rigidbody.gameObject.name != "Lil Fred" && canGrabEverything == false)
                     return;
 
                 //Désactive la gravitée
