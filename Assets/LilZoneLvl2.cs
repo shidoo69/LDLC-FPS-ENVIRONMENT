@@ -23,7 +23,7 @@ public class LilZoneLvl2 : MonoBehaviour
         {
             panel.SetActive(true);
             Nom.text = "Fred";
-            Phrase.text = "Merci beaucoup ! Va parler à Karim pour connaître la suite du plan.";
+            Phrase.text = "Merci beaucoup ! Maintenant, tu peux attraper tout ce qu'il y a dans la carte.";
             StartCoroutine(PlusdeTexte());
             lvl2finis++;
         }

@@ -6,6 +6,7 @@ using System;
 
 using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class GameManager : MonoBehaviour
     }
      void Update()
     {
-
+        if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            panel.SetActive(false);
+        }
     }
     public void UpdateScore(int scoreToAdd)
     {
@@ -75,7 +79,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator TexteIntro()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(60);
         panel.SetActive(false);
     }
 
