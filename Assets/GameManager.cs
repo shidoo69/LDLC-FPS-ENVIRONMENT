@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         barscore = 0;
         panel.SetActive(true);
         Nom.text = "Dieu";
-        Phrase.text = "Bonjour, c'est Dieu qui te parle. Appuie sur la touche Tab si tu as besoin d'informations. Va parler à Fred elle va te dire comment t'échaper de la ville";
+        Phrase.text = "Bonjour, c'est Dieu qui te parle. Appuie sur la touche Tab si tu as besoin d'informations. Va parler à Fred, elle va te dire comment t'échapper de la ville.";
         StartCoroutine(TexteIntro());
 
     }
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         {
             panel.SetActive(true);
             Nom.text = "Dieu";
-            Phrase.text = "Bravo ! Va parler à Fred";
+            Phrase.text = "Bravo ! Va parler à Fred.";
             StartCoroutine(PlusdeTexte());
 
         }
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
             panel.SetActive(true);
             Nom.text = "Dieu";
-            Phrase.text = "Continue comme ça, il ne t'en reste plus que 4";
+            Phrase.text = "Continue comme ça, il ne t'en reste plus que 4.";
             StartCoroutine(PlusdeTexte());
 
         }
